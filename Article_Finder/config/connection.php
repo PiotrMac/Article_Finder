@@ -9,11 +9,11 @@ function connection() {
     // serwer bazy danych
     $mysql_server = "localhost"; 
     // użytkownik bazy danych
-    $mysql_user = ""; 
+    $mysql_user = "asura_artykuly"; 
     // hasło bazy danych
-    $mysql_pass = ""; 
+    $mysql_pass = "ZoD2UXPaq5"; 
     // nazwa bazy danych
-    $mysql_db = ""; 
+    $mysql_db = "asura_artykuly"; 
     // nawiązanie połączenia z serwerem MySQL 
     @mysql_connect($mysql_server, $mysql_user, $mysql_pass) 
     or die('Błąd połączenia z serwerem MySQL.'); 

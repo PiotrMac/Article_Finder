@@ -14,9 +14,9 @@ and open the template in the editor.
         <?php
         
         // podłączamy plik  connection.php 
-        //require "connection.php"; 
+        require (dirname(__FILE__)."/../config/connection.php"); 
         // wywołujemy funkcję connection() 
-        //connection(); 
+        connection(); 
         echo ("<h1>Test </h1>");
         
         
