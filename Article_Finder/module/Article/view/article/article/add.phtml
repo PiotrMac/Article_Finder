@@ -1,0 +1,41 @@
+<?php
+namespace Article;
+ 
+ $title = 'Dodaj nowy artykuł';
+ $this->headTitle($title);
+ ?>
+
+<script src="../ckeditor/ckeditor.js"></script>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ 
+ 
+                <?php
+                
+                
+  /*$sql = 'SELECT nazwa_kategorii FROM kategoria';
+  $statement = $db->query($sql);
+  $results = $statement->execute();
+  $data = $result->getResource()->fetchAll();*/
+        
+                
+ $form->setAttribute('action', $this->url('article', array('action' => 'add')));
+ $form->prepare();
+ 
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id_artykulu'));
+ echo $this->formHidden($form->get('data_dodania'));
+// echo $this->formHidden($form->get('email_autora'));
+ echo $this->formRow($form->get('tytul')->setAttribute('class', 'form-control'));
+ echo $this->formRow($form->get('id_kategorii')->setAttribute('class', 'form-control'));//->setAttribute('options', $data));
+ echo $this->formRow($form->get('tekst')->setAttribute('class', 'form-control')); ?>  
+
+        <script>
+             CKEDITOR.replace( 'tekst_ckeditor' );
+        </script>
+          </br>
+
+<?php echo $this->formSubmit($form->get('submit'));
+
+ echo $this->form()->closeTag();
+ 
+ 

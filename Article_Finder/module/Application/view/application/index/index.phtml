@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <h1><?php echo sprintf($this->translate('Witaj w aplikacji %sArticle Finder%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><?php echo sprintf($this->translate('Dzięki aplikacji %sArticle Finder%s możesz przeglądać oraz wyszukiwać artykuły naukowe znajdujące się w naszej bazie danych. Dodatkowo umożliwiamy zalogowanym użytkownikom edycję istniejących artykułów oraz tworzenie nowych. Aplikacja funkcjonuje w oparciu o Zend Framework version %s.'), '<a href="https://github.com/PiotrMac/Article_Finder" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
+    <p><a class="btn btn-success btn-lg" href="/article" target="_blank"><?php echo $this->translate('Przeglądaj najnowsze artykuły!') ?> &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Logowanie') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('Zaloguj się już teraz aby:</br> </br>- wyszukiwać artykuły, </br>- dodawać nowe artykuły przy pomocy intuicyjnego edytora WYSIWYG),</br>- edytować artykuły.'), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
+                <p><a class="btn btn-success pull-right" href="/user/login" target="_blank"><?php echo $this->translate('Zaloguj się') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Przeglądaj artykuły') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('Przeglądaj artykuły z najpopularniejszych kategorii: </br> </br>- Informatyka</br>- Elektronika</br>- Biologia</br>- Matematyka')); ?></p>
+                <p><a class="btn btn-success pull-right" href="/article" target="_blank"><?php echo $this->translate('Przeglądaj') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Śledź nas na GitHub') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('Odwiedź nasze konto na GitHubie!</br></br>- Sprawdź źródła aplikacji</br>- Wspieraj twórców</br>- Wysyłaj swoje sugestie</br>- Prowadź dyskusję</br>')); ?></p>
+                <p><a class="btn btn-success pull-right" href="https://github.com/PiotrMac/Article_Finder" target="_blank"><?php echo $this->translate('Repozytorium') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>

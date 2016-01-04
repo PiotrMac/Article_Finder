@@ -1,0 +1,26 @@
+<?php
+ 
+
+ $title = 'Usuń wybrany artykuł';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <p>Czy chcesz skasować następujący artykuł?
+     </br>
+    " <?php echo $this->escapeHtml($article->tytul); ?> "
+     
+ </p>
+ <?php
+ $url = $this->url('article', array(
+     'action' => 'delete',
+     'id_artykulu'     => $this->id_artykulu,
+ ));
+ ?>
+ <form action="<?php echo $url; ?>" method="post">
+ <div>
+     <input type="hidden" name="id_artykulu" value="<?php echo (int) $article->id_artykulu; ?>" />
+     <input type="submit" name="del" value="Tak" class='btn btn-info'/>
+     <input type="submit" name="del" value="Nie" class='btn btn-info' />
+ </div>
+ </form>

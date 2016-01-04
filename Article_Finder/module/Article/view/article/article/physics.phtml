@@ -1,0 +1,134 @@
+ <?php
+ 
+
+ $title = 'Wszystkie artykuły z kategorii: fizyka';
+ $this->headTitle($title);
+ ?>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><?php echo $this->escapeHtml($title); ?></h3>
+  </div>
+  <div class="panel-body">
+ <!--<h1><?php echo $this->escapeHtml($title); ?></h1>-->
+<!-- <p>
+     <a href="<?php echo $this->url('article', array('action'=>'add'));?>">Add new album</a>
+ </p>-->
+  <!--    
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+-->
+ 
+     <?php/* //odkomentować
+ // add at the end of the file after the table
+ echo $this->paginationControl(
+     // the paginator object
+     $this->paginator,
+     // the scrolling style
+     'sliding',
+     // the partial to use to render the control
+     'partial/paginator1.phtml',
+     // the route to link to when a user clicks a control link
+     array(
+         'route' => 'article'
+     )
+ );*/ //odkomentować
+ ?>
+ 
+ <?php// foreach ($articles as $article) : ?>
+<?php foreach ($this->articles as $article)://paginator 
+    ?>
+    <!-- 
+      <table class="table">
+        
+        <tr><th>Tytuł artykułu:</th>
+    
+         <tr> <td><?php //echo $this->escapeHtml($article->tytul);?></td>
+     
+    
+          <tr><th>Opcje edycji (tylko dla zalogowanych użytkowników):</th></tr>
+     
+          <td>
+          <a href="<?php //echo $this->url('article',
+             //array('action'=>'edit', 'id_artykulu' => $article->id_artykulu));?>">Edytuj</a>
+          <a href="<?php// echo $this->url('article',
+             //array('action'=>'delete', 'id_artykulu' => $article->id_artykulu));?>">Usuń</a>
+    
+          </td>
+     
+         </tr>
+         
+     <tr> <th>Treść</th></tr>
+     <tr><td><?php// echo $this->escapeHtml($article->tekst);?></td></tr>
+     <hr>
+  </table>
+     -->
+    <?php switch ($this->escapeHtml($article->id_kategorii)){
+     
+ case 1: 
+     echo "Kategoria: Informatyka";
+     $urlKat='/img/informatyka.gif';
+     break;
+ case 2: 
+     echo "Kategoria: Fizyka";
+     $urlKat='/img/fizyka.png';
+     break;
+  case 3: 
+     echo "Kategoria: Matematyka";
+      $urlKat='/img/matematyka.png';
+     break;
+ case 4: 
+     echo "Kategoria: Biologia";
+     $urlKat='/img/biologia.png';
+     break;
+  case 5: 
+     echo "Kategoria: Elektronika";
+      $urlKat='/img/elektronika.jpg';
+     break;
+ case 6: 
+     echo "Kategoria: Inne";
+     $urlKat='/img/inne.png';
+     break;
+ 
+ }?>
+ <hr>  
+   <div class="media">
+  <div class="media-middle  pull-left">
+    <a href="#">
+       
+      <img class="media-object" src="<?php echo $urlKat?>" alt="Generic placeholder image">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><?php echo htmlspecialchars_decode($article->tytul);?></h4>
+    <?php echo htmlspecialchars_decode($article->tekst);?>
+  </div>
+</div>
+     <hr>
+      <a href="<?php echo $this->url('article',
+             array('action'=>'edit', 'id_artykulu' => $article->id_artykulu));?>">Edytuj artykuł</a>
+ <hr class="style16">
+<br><br>
+
+     
+ <?php endforeach; ?>
+
+
+  </div>
+</div>
